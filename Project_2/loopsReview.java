@@ -21,19 +21,26 @@ public class loopsReview {
                 System.out.println("sum is " + sum);
                 average = sum/count;
                 System.out.println("average is " + average);
-                if (average >=90) {
-                    System.out.println("Letter Grade is A");
-                }
-                else if (average >= 80) {
-                    System.out.println("Letter Grade is B");
-                }
-                else if (average >= 70) {
-                    System.out.println("Letter Grade is C");
-                }
-                else if (average >= 60) {
-                    System.out.println("Letter Grade is F");
-                }
+                System.out.println("Letter grade is " + LetterGrade(average));
+
             }
+        }
+    }
+    public static char LetterGrade(double grade) {
+        if (grade >=90) {
+            return('A');
+        }
+        else if (grade >= 80) {
+            return('B');
+        }
+        else if (grade >= 70) {
+            return('C');
+        }
+        else if (grade >= 60) {
+            return('D');
+        }
+        else {
+            return('F');
         }
     }
 }
