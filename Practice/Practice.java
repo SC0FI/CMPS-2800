@@ -170,8 +170,6 @@ public class Practice {
                         List<Book> booksToReturn = library.searchByTitle(returnTitle);
                         if (!booksToReturn.isEmpty()) {
                             library.returnBook(booksToReturn.get(0));
-                        }else {
-                            library.returnBook();
                         }
 
 
