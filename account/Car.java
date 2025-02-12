@@ -6,13 +6,26 @@ public class Car {
   private int year;
   private int mileage;
 
-  public  Car car = new Car();
-  public  Car car1 = new Car(String make, String model, int year) {
+  public  Car(String make, String model, int year, int mileage) {
       this.make = make;
-      this.
+      this.model = model;
+      this.year = year;
+      this.mileage = mileage;
+    }
+    public Car() {}
+
+    public Car(String make, String model) {
+      this.make = make;
+      this.model = model;
     }
 
-  public void drive(int mileage) {
+    public Car(String make, String model, int year) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+    }
+
+    public void drive(int mileage) {
       this.mileage = mileage;
   }
 
@@ -32,7 +45,8 @@ public class Car {
       this.mileage = mileage;
   }
 
-    public static void main(String args[]) {
+  public static void main(String args[]) {
+      Car car = new Car("Honda", "Accord", 2017);
       car.setMake("Thing");
       System.out.println(car.getMake());
       System.out.println(car.getMileage());
