@@ -6,11 +6,12 @@ public class Car {
   private int year;
   private int mileage;
 
-  public  Car car = new Car();
-  public  Car car1 = new Car(String make, String model, int year) {
+  public Car(String make, String model, int year, int mileage) {
       this.make = make;
-      this.
-    }
+      this.model = model;
+      this.year = year;
+      this.mileage = mileage;
+  }
 
   public void drive(int mileage) {
       this.mileage = mileage;
@@ -18,6 +19,10 @@ public class Car {
 
   public String getMake() {
       return make;
+  }
+
+  public String getModel() {
+      return model;
   }
 
   public int getMileage() {
@@ -33,8 +38,7 @@ public class Car {
   }
 
     public static void main(String args[]) {
-      car.setMake("Thing");
-      System.out.println(car.getMake());
-      System.out.println(car.getMileage());
+      Car car = new Car("Toyota", "Camry", 2020, 500);
+      System.out.printf("Make: " + car.getMake() + "\nModel: " + car.getModel() + "\nMileage: " + car.getMileage());
     }
 }
