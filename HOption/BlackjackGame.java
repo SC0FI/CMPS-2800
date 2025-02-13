@@ -57,7 +57,7 @@ public class BlackjackGame {
     }
     private void dealerTurn() {
         System.out.println("Dealers turn...");
-        while (dealer.getScore()  < 20) {
+        while (dealer.getScore()  < 21) {
             if (player.getScore() > dealer.getScore() && player.getScore() < 21) {
                 dealer.addCard(deck.dealCard());
             } else if (player.getScore() == 21 && dealer.getScore() < 21) {

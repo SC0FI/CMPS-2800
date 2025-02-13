@@ -37,7 +37,7 @@ public class Car {
       this.mileage = mileage;
   }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
       Car car = new Car("Toyota", "Camry", 2020, 500);
       System.out.printf("Make: " + car.getMake() + "\nModel: " + car.getModel() + "\nMileage: " + car.getMileage());
     }
