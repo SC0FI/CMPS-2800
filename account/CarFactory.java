@@ -11,33 +11,40 @@ public class CarFactory {
         model = carModel;
         year = carYear;
     }
-
+    //backup method, just in case no arguments are provided
     public CarFactory() {
-        make = "Uknown";
+        make = "Unknown";
         model = "Unknown";
         year = -1;
     }
-
+    //getMake, self explanatory.
     public String getMake() {
         return make;
     }
 
+    //setModel, in case the user forgets, inputs wrong model
+    public void setModel(String make) {
+        this.model = model;
+    }
+
+    //getModel, self explanatory.
     public String getModel() {
         return model;
     }
-
+    //getYear, self explanatory.
     public int getYear() {
         return year;
     }
-
+    //toString, converts the values into a readable format.
     public String toString(){
-      return toString() + "new stuff \n";
+        return "Make: " + make + "\nModel: " + model + "\nYear: " + year;
     }
+
 
     public static void main(String[] args) {
         CarFactory car = new CarFactory();
         CarFactory carEthan = new CarFactory("Hyundai", "VeraCruz", 2011);
-        System.out.println("Make: " + car.getMake() + "\n Model: " + car.getModel() + "\n Year: " + car.getYear());
-        //System.out.println(carEthan.toString());
+        CarFactory carJacob = new CarFactory("Honda", "Accord", 2017);
+        System.out.println(carJacob.toString());
     }
 }
