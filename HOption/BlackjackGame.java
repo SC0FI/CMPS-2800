@@ -3,9 +3,9 @@ package HOption;
 import java.util.Scanner;
 
 public class BlackjackGame {
-    private Deck deck;
-    private Player player;
-    private Player dealer;
+    private final Deck deck;
+    private final Player player;
+    private final Player dealer;
 
     public BlackjackGame() {
         deck = new Deck();
@@ -47,18 +47,24 @@ public class BlackjackGame {
             System.out.println("Would you like to hit or stand? (h/s)");
             String choice = scanner.nextLine();
 
-            if (choice.equalsIgnoreCase("h")) {
+            if (choice.equalsIgnoreCase("h") || choice.equalsIgnoreCase("hit")) {
                 player.addCard((deck.dealCard()));
                 System.out.println("You drew: " + player.getHand());
-            } else if (choice.equalsIgnoreCase("s")) {
+            } else if (choice.equalsIgnoreCase("s") || choice.equalsIgnoreCase("stay") || choice.equalsIgnoreCase("stand")) {
                 isPlayerTurn = false;
             }
         }
     }
     private void dealerTurn() {
         System.out.println("Dealers turn...");
-        while (dealer.getScore() < 17) {
-            dealer.addCard(deck.dealCard());
+        while (dealer.getScore()  < 21) {
+            if (player.getScore() > dealer.getScore() && player.getScore() < 21) {
+                dealer.addCard(deck.dealCard());
+            } else if (player.getScore() == 21 && dealer.getScore() < 21) {
+                dealer.addCard(deck.dealCard());
+            } else {
+                break;
+            }
             System.out.println("Dealer drew: " + dealer.getHand());
         }
     }
